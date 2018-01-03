@@ -1,5 +1,7 @@
 package textAdventure;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 import textAdventure.Exit.*;
 import textAdventure.Misc.*;
@@ -8,7 +10,7 @@ public class Location {
 	// Member Variables
 		public String title;
 		public String description;
-		public Exit[] exits = new Exit[10];
+		public List<Exit> exits = new ArrayList<Exit>();
 		
 		
 		// Returns location
@@ -22,12 +24,16 @@ public class Location {
 		}
 		
 		// Adds exit in current location
-		public void addExit(Exit exit, int index) {
-			Misc.insertIntoArray(exits, index, exit);
+		public void addExit(Exit exit) {
+			exits.add(exit);
 		}
 		
 		// Removes an exit from current location
-		//TODO
+		public void removeExit(Exit exit) {
+			if (exits.contains(exit)) {
+				exits.remove(exit);
+			}
+		}
 		
 		// Returns a vector of exits
 		//TODO

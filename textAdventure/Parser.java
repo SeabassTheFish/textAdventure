@@ -2,7 +2,7 @@ package textAdventure;
 // Interpreter
 
 public class Parser {
-	public String interpret(String input) {
+	public static String interpret(String input) {
 		switch (input.toLowerCase()) {
 			case "north":
 			case "n":
@@ -53,8 +53,11 @@ public class Parser {
 				return "in";
 			case "out":
 				return "out";
+			case "inventory":
+			case "i":
+				return "inventory";
 			default:
-				return null;
+				return "Sorry, I couldn't understand that";
 		}
 	}
 }
